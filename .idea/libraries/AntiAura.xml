@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="AntiAura">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../ShelterMC-dev v1.14.4/plugins/AntiAura.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="PlayerPoints">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../ShelterMC-dev v1.14.4/plugins/PlayerPoints.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
