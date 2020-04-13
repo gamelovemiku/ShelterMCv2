@@ -1,29 +1,15 @@
 package com.gamelovemiku.sheltermc.perk;
 
 import com.gamelovemiku.sheltermc.ShelterMCHelper;
-import com.sk89q.worldedit.bukkit.BukkitAdapter;
-import com.sk89q.worldguard.LocalPlayer;
-import com.sk89q.worldguard.WorldGuard;
-import com.sk89q.worldguard.bukkit.WorldGuardPlugin;
-import com.sk89q.worldguard.protection.flags.Flags;
-import com.sk89q.worldguard.protection.regions.RegionContainer;
-import com.sk89q.worldguard.protection.regions.RegionQuery;
 import org.bukkit.Bukkit;
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.Ageable;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
-import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
-import world.bentobox.bentobox.api.events.IslandBaseEvent;
-import world.bentobox.bentobox.listeners.flags.protection.BreakBlocksListener;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class CropMasterPerk extends Perk implements Listener {
 
@@ -31,16 +17,17 @@ public class CropMasterPerk extends Perk implements Listener {
     ShelterMCHelper helper = new ShelterMCHelper();
 
     @EventHandler
-    public void onBreak(BlockBreakEvent event, BreakBlocksListener bb) {
+    public void onBreak(BlockBreakEvent event) {
         player = event.getPlayer();
         Block block = event.getBlock();
 
-        if(player.getWorld() != Bukkit.getWorld("world_shelter")) {
+        if(player.getWorld() == Bukkit.getWorld("world_shelter")) {
             if (block.getType().equals(Material.WHEAT)) {
                 if (isFullyGrown(block)) {
-                    int amount = helper.randomNumber(10);
+                    int amount = helper.randomNumber(7);
                     block.getWorld().dropItemNaturally(block.getLocation(), new ItemStack(Material.WHEAT, amount));
                     block.getWorld().dropItemNaturally(block.getLocation(), new ItemStack(Material.WHEAT_SEEDS, helper.randomNumber(2)));
+                    block.setType(Material.AIR);
                     player.sendMessage(helper.formatInGameColor("&a+ &e[Perk] &7ได้รับข้าวสาลี &9" + amount + " ชิ้น &7จากการอัพเกรดความสามารถ"));
                 }
             }

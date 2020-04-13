@@ -2,8 +2,6 @@ package com.gamelovemiku.sheltermc;
 
 import com.gamelovemiku.adapter.Vault;
 import com.gamelovemiku.sheltermc.command.CommandAddon;
-import com.gamelovemiku.sheltermc.entity.AnimalMob;
-import com.gamelovemiku.sheltermc.entity.HostileMob;
 import com.gamelovemiku.sheltermc.global.Mining;
 import com.gamelovemiku.sheltermc.global.Natural;
 import com.gamelovemiku.sheltermc.gameplay.PlayerGameplay;
@@ -32,14 +30,8 @@ public class ShelterMC extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents(new Mining(), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents(new Natural(), (Plugin)this);
 
-        Bukkit.getServer().getPluginManager().registerEvents(new HostileMob(), (Plugin)this);
-        Bukkit.getServer().getPluginManager().registerEvents(new AnimalMob(), (Plugin)this);
-
         Bukkit.getServer().getPluginManager().registerEvents(new PlayerGameplay(), (Plugin)this);
 
-        /*
-         * PERK
-         */
         Bukkit.getServer().getPluginManager().registerEvents(new SwordPerk(), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents(new CropMasterPerk(), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents(new NoLimboPerk(), (Plugin)this);

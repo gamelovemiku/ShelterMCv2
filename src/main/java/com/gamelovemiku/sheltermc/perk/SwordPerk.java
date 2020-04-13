@@ -9,6 +9,10 @@ import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class SwordPerk extends Perk implements Listener {
 
     private Player killer = null;
@@ -31,27 +35,32 @@ public class SwordPerk extends Perk implements Listener {
         killer = event.getEntity().getKiller();
 
         if(killer instanceof Player) {
-            if(killer.hasPermission("sheltermc.perk.sword.lv0")) {
-                for (int i = 7; i >= 0 ; i--) {
-                    killer.sendMessage("DEBUG: Searching: #" + i + " change:" + change[i]);
-                    if(killer.hasPermission("sheltermc.perk.sword.lv" + i)) {
-                        doAction(entity, change[i]);
-                        entity.getWorld().spawnParticle(Particle.LAVA, entity.getLocation(), i*4);
-                        killer.sendMessage("DEBUG: MONSTER SPAWNED -> change:" + change[i]);
-                        break;
+            switch (entity.getType()) {
+                case ZOMBIE:
+                case SPIDER:
+                case CREEPER:
+                case SKELETON:
+                    if(killer.hasPermission("sheltermc.perk.sword.lv0")) {
+                        for (int i = 7; i >= 0 ; i--) {
+                            if(killer.hasPermission("sheltermc.perk.sword.lv" + i)) {
+                                doAction(entity, change[i]);
+                                entity.getWorld().spawnParticle(Particle.LAVA, entity.getLocation(), i*4);
+                                break;
+                            }
+                        }
+                    } else {
+                        doAction(entity, change[0]);
+                        killer.sendMessage("You don't have permission MONSTER WILL SPAWN! USING DEFAULT");
                     }
-                }
-            } else {
-                doAction(entity, change[0]);
-                killer.sendMessage("You don't have permission MONSTER WILL SPAWN! USING DEFAULT");
+                    break;
+                default:
+                    break;
             }
         }
         return true;
     }
 
     public boolean doAction(Entity entity, int change) {
-        killer.sendTitle(null, "THIS IS INFECTED MONSTER!! (" + change + "%)");
-        killer.sendMessage("THIS IS INFECTED MONSTER!! (" + change + "%)");
         switch (entity.getType()) {
             case ZOMBIE:
                 if (helper.randomNumber(100) < change) {
@@ -99,7 +108,7 @@ public class SwordPerk extends Perk implements Listener {
     public CaveSpider spawnCaveSpider(Location location) {
         CaveSpider cavespider = (CaveSpider) location.getWorld().spawnEntity(location, EntityType.CAVE_SPIDER);
         cavespider.setRemoveWhenFarAway(true);
-        cavespider.setCustomName(ChatColor.RED + "₪ " + ChatColor.BOLD + "Revenger Kids");
+        cavespider.setCustomName(ChatColor.AQUA + "₪ " + ChatColor.BOLD + "Poison Spider");
         cavespider.setHealth(6);
         cavespider.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, helper.secondToTick(15), 6));
         cavespider.setTicksLived(helper.secondToTick(30));
