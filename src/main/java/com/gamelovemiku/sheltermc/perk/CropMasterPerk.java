@@ -1,8 +1,8 @@
 package com.gamelovemiku.sheltermc.perk;
 
 import com.gamelovemiku.sheltermc.ShelterMCHelper;
-import org.bukkit.Bukkit;
-import org.bukkit.Material;
+import org.apache.commons.lang.StringUtils;
+import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.Ageable;
 import org.bukkit.entity.Player;
@@ -10,6 +10,8 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
+import world.bentobox.bentobox.listeners.flags.protection.BreakBlocksListener;
+import world.bentobox.bentobox.lists.Flags;
 
 public class CropMasterPerk extends Perk implements Listener {
 
@@ -21,32 +23,84 @@ public class CropMasterPerk extends Perk implements Listener {
         player = event.getPlayer();
         Block block = event.getBlock();
 
-        if(player.getWorld() == Bukkit.getWorld("world_shelter")) {
-            if (block.getType().equals(Material.WHEAT)) {
-                if (isFullyGrown(block)) {
-                    int amount = helper.randomNumber(7);
-                    block.getWorld().dropItemNaturally(block.getLocation(), new ItemStack(Material.WHEAT, amount));
-                    block.getWorld().dropItemNaturally(block.getLocation(), new ItemStack(Material.WHEAT_SEEDS, helper.randomNumber(2)));
-                    block.setType(Material.AIR);
-                    player.sendMessage(helper.formatInGameColor("&a+ &e[Perk] &7ได้รับข้าวสาลี &9" + amount + " ชิ้น &7จากการอัพเกรดความสามารถ"));
-                }
-            }
+        int[] change = new int[] {
+                0,
+                4,
+                9,
+                15,
+                24,
+                29,
+                32,
+                35,
+        };
 
-            if (block.getType().equals(Material.CARROTS)) {
-                if(isFullyGrown(block)) {
-                    block.getWorld().dropItemNaturally(block.getLocation(), new ItemStack(Material.CARROT, helper.randomNumber(10)));
-                    player.sendMessage("CARROTTTTTTTTTTTTTT");
-                }
-            }
+        BreakBlocksListener bb = new BreakBlocksListener();
+        bb.onBlockBreak(event);
 
-            if (block.getType().equals(Material.POTATOES)) {
-                if(isFullyGrown(block)) {
-                    block.getWorld().dropItemNaturally(block.getLocation(), new ItemStack(Material.POTATO, helper.randomNumber(10)));
-                    player.sendMessage("POTATOSSSSSSSS");
-                }
+        if(player.getWorld() == Bukkit.getWorld("world_shelter") && bb.checkIsland(event, player, block.getLocation(), Flags.BREAK_BLOCKS)) {
+            player.sendMessage(block.getType().toString() + " !!!!");
+            switch (block.getType().toString()) {
+                case "WHEAT":
+                case "CARROTS":
+                case "POTATOES":
+                    if (player.hasPermission("sheltermc.perk.cropmaster.lv0")) {
+                        for (int i = 7; i >= 0; i--) {
+                            if (player.hasPermission("sheltermc.perk.cropmaster.lv" + i)) {
+                                doAction(block, change[i], Particle.CLOUD);
+                                break;
+                            }
+                        }
+                    } else {
+                        doAction(block, change[0], null);
+                    }
+                    break;
+                default:
+                    break;
             }
         }
 
+    }
+
+    public boolean doAction(Block block, int change, Particle particle) {
+        switch (block.getType().toString()) {
+            case "WHEAT":
+                if (isFullyGrown(block)) {
+                    if (randomDropItem(block, change, Material.POTATO, 7)) {
+                        block.getWorld().dropItemNaturally(block.getLocation(), new ItemStack(Material.WHEAT_SEEDS, helper.randomNumber(1)));
+                        player.getWorld().spawnParticle(particle, player.getLocation(), 3);
+                    }
+                }
+                break;
+            case "CARROTS":
+                if (isFullyGrown(block)) {
+                    if (isFullyGrown(block)) {
+                        if (randomDropItem(block, change, Material.CARROT, 7)) {
+                            player.getWorld().spawnParticle(particle, player.getLocation(), 3);
+                        }
+                    }
+                }
+                break;
+            case "POTATOES":
+                if (isFullyGrown(block)) {
+                    if (randomDropItem(block, change, Material.POTATO, 7)) {
+                        player.getWorld().spawnParticle(particle, player.getLocation(), 3);
+                    }
+                }
+                break;
+        }
+        return true;
+    }
+
+    public boolean randomDropItem(Block block, int change, Material material, int max) {
+        ShelterMCHelper helper = new ShelterMCHelper();
+        int amount = helper.randomNumber(max);
+        if(helper.randomNumber(100) < change) {
+            block.getWorld().dropItemNaturally(block.getLocation(), new ItemStack(material, amount));
+            block.setType(Material.AIR);
+            player.sendMessage(helper.formatInGameColor("&e# &8[&ePerk&8] &7ได้รับ &e" + StringUtils.capitalize(material.toString().toLowerCase()) + "&7 เพิ่ม &e" + amount + " ชิ้น &7จากความสามารถพิเศษ /" + change + "%" ));
+            return true;
+        }
+        return false;
     }
 
     public boolean isFullyGrown(Block block) {
