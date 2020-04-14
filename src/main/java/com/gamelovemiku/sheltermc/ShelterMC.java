@@ -28,7 +28,7 @@ public class ShelterMC extends JavaPlugin {
         Vault.setupEconomy();
 
         Bukkit.getServer().getPluginManager().registerEvents(new Mining(), (Plugin)this);
-        Bukkit.getServer().getPluginManager().registerEvents(new Natural(), (Plugin)this);
+        Bukkit.getServer().getPluginManager().registerEvents(new Natural(this), (Plugin)this);
 
         Bukkit.getServer().getPluginManager().registerEvents(new PlayerGameplay(), (Plugin)this);
 
