@@ -6,6 +6,7 @@ import com.gamelovemiku.sheltermc.global.Mining;
 import com.gamelovemiku.sheltermc.global.Natural;
 import com.gamelovemiku.sheltermc.gameplay.PlayerGameplay;
 import com.gamelovemiku.sheltermc.perk.*;
+import com.gamelovemiku.sheltermc.worldpatch.AscotCityWorldPatch;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
@@ -38,7 +39,10 @@ public class ShelterMC extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents(new FlowerPowerPerk(), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents(new AnimalsGodPerk(), (Plugin)this);
 
+        Bukkit.getServer().getPluginManager().registerEvents(new AscotCityWorldPatch(this), (Plugin)this);
+
         this.getCommand("testpl").setExecutor(new CommandAddon());
+        this.getCommand("starttest").setExecutor(new AscotCityWorldPatch(this));
     }
 
     @Override

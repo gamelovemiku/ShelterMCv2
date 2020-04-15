@@ -35,6 +35,8 @@ public class AlertOnTopRoofTask extends BukkitRunnable {
             player.sendTitle(helper.formatInGameColor("&c&lDANGER!"), helper.formatInGameColor("&fมีสารเคมีเข้มข้นสูงบริเวณนี้! โปรดหลีกเลี่ยง!"), 10, 35, 10);
 
             Bukkit.broadcastMessage("ALERT! --@ Y" + player.getLocation().getY() + "---> " + this.isCancelled());
+        } else {
+            this.cancel();
         }
     }
 }

@@ -9,3 +9,6 @@ commands:
   testpl:
     description: Your description
     usage: /testpl
+  starttest:
+    description: Your description
+    usage: /starttest
