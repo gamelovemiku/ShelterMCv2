@@ -1,7 +1,9 @@
 package com.gamelovemiku.sheltermc.tasks;
 
 import com.gamelovemiku.sheltermc.ShelterMCHelper;
+import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
@@ -16,6 +18,7 @@ public class PermissionTimeOutCountdownTask extends BukkitRunnable {
     private String message = "# Countdown.. %time second left!";
 
     private int time = 0;
+    private int time_start = 0;
 
     private ShelterMCHelper helper = new ShelterMCHelper();
 
@@ -24,15 +27,31 @@ public class PermissionTimeOutCountdownTask extends BukkitRunnable {
         this.player = player;
         this.permission = permission;
         this.message = message;
-        this.time = time;
+        this.time = time + 5;
+        this.time_start = time;
+
+        Bukkit.getScheduler().scheduleSyncDelayedTask(this.plugin, () -> {
+            helper.runOnConsole("lp user "+ player.getName()  + " permission settemp " + permission + " true " + time + "s world=world");
+        }, helper.secondToTick(5));
     }
 
     @Override
     public void run() {
-        time--;
-        player.sendMessage(helper.formatInGameColor(message.replace("%time", String.valueOf(time))));
-        if(time == 0) {
-            this.cancel();
+        if(time <= time_start) {
+            player.sendTitle("", helper.formatInGameColor(message.replace("%time", String.valueOf(time))), 0,50,15);
+            if(time == 0) {
+                player.sendTitle(helper.formatInGameColor(("&c&lTIME OUT!")), helper.formatInGameColor(("&eหมดเวลาแล้ว!")), 15,50,15);
+                this.cancel();
+            }
+        } else {
+            player.sendTitle(
+                    helper.formatInGameColor(("&f&l%time").replace("%time", String.valueOf(time-time_start))),
+                    helper.formatInGameColor(("&aเตรียมพร้อม!")),
+                    0,
+                    50,
+                    15);
+            player.playSound(player.getLocation(), Sound.BLOCK_DISPENSER_FAIL, 1,1);
         }
+        time--;
     }
 }

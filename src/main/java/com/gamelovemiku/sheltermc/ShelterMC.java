@@ -42,7 +42,7 @@ public class ShelterMC extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents(new AscotCityWorldPatch(this), (Plugin)this);
 
         this.getCommand("testpl").setExecutor(new CommandAddon());
-        this.getCommand("starttest").setExecutor(new AscotCityWorldPatch(this));
+        this.getCommand("ascotcity").setExecutor(new AscotCityWorldPatch(this));
     }
 
     @Override
