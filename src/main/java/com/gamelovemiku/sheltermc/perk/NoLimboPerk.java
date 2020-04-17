@@ -4,6 +4,7 @@ import com.gamelovemiku.sheltermc.ShelterMCHelper;
 import me.clip.placeholderapi.PlaceholderAPI;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -18,13 +19,13 @@ public class NoLimboPerk implements Listener {
     public boolean hasPerk(PlayerRespawnEvent event) {
         int[] change = new int[] {
                 100,
+                91,
                 82,
-                65,
-                40,
-                33,
-                25,
-                19,
-                7,
+                74,
+                66,
+                58,
+                45,
+                37,
         };
 
         player = event.getPlayer();
@@ -36,13 +37,14 @@ public class NoLimboPerk implements Listener {
                         if(player.hasPermission("sheltermc.perk.nolimbo.lv" + i)) {
                             int num = helper.randomNumber(100);
                             if(num < change[i]) {
-                                event.getPlayer().sendMessage(helper.formatInGameColor("DEBUG (random:" + num + " < " + change[i] + "): #" + i));
-                                event.getPlayer().sendMessage(helper.formatInGameColor("GO LIMBOOOOOOOOOOOOOOOOO" + i));
+                                //event.getPlayer().sendMessage(helper.formatInGameColor("DEBUG (random:" + num + " < " + change[i] + "): #" + i));
                                 spawnInLimbo(event);
                                 return true;
                             } else {
-                                event.getPlayer().sendMessage(helper.formatInGameColor("DEBUG (random:" + num + " < " + change[i] + "): #" + i));
-                                event.setRespawnLocation(new Location(Bukkit.getWorld("world"), -65.5, 65, -103.5, 0, 3));
+                                //event.getPlayer().sendMessage(helper.formatInGameColor("DEBUG (random:" + num + " < " + change[i] + "): #" + i));
+                                player.sendMessage(helper.formatInGameColor("&d# &e[&dPerk&e] &7ด้วยความสามารถ &eโกงความตาย " + (100-change[i]) + "% &7ทำให้คุณไม่ต้องไป &6&lLimbo &7ในครั้งนี้"));
+                                player.playSound(player.getLocation(), Sound.ENTITY_CHICKEN_EGG, 1,1);
+                                event.setRespawnLocation(new Location(Bukkit.getWorld("world"), -65.50, 65, -103.50, 0, 3));
                                 return true;
                             }
                         }
@@ -51,9 +53,9 @@ public class NoLimboPerk implements Listener {
                     this.spawnInLimbo(event);
                 }
             } else {
-                event.getPlayer().sendMessage(helper.formatInGameColor("&c&m-------------------------------------------------"));
-                event.getPlayer().sendMessage(helper.formatInGameColor("&c&lYou need more &6&lLIFE &cto escape from &6&lLIMBO"));
-                event.getPlayer().sendMessage(helper.formatInGameColor("&c&m-------------------------------------------------" + (getLife()+5)));
+                event.getPlayer().sendMessage(helper.formatInGameColor("&c&m----------------------------------------------------"));
+                event.getPlayer().sendMessage(helper.formatInGameColor("&cคุณจำต้องทำอะไรบางอย่างเพื่อออกจาก &6&lLIMBO &cลองติดต่อคนแถวนี้ดูนะ"));
+                event.getPlayer().sendMessage(helper.formatInGameColor("&c&m----------------------------------------------------"));
                 this.spawnInLimbo(event);
             }
         }
@@ -63,9 +65,5 @@ public class NoLimboPerk implements Listener {
     public void spawnInLimbo(PlayerRespawnEvent event) {
         event.setRespawnLocation(new Location(Bukkit.getWorld("world_limbo"), 93.5, 37, 180, -180, 3));
         event.getPlayer().sendMessage(helper.formatInGameColor("&c&lINTO THE DEATH &7You are dead! now you are in Limbo"));
-    }
-
-    public String getLife() {
-        return PlaceholderAPI.setPlaceholders(player, "%playerpoints_points%");
     }
 }

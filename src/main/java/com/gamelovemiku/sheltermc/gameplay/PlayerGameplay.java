@@ -42,7 +42,7 @@ public class PlayerGameplay implements Listener {
             event.setKeepLevel(true);
             event.setKeepInventory(true);
             event.getDrops().clear();
-            fee.getPlayer().sendMessage(h.formatInGameColor("&9&lRECOVERY &7Taking &b" + fee.getAmount() + " &7points from your account for saving your inventory."));
+            fee.getPlayer().sendMessage(h.formatInGameColor("&6$ &8[&9Fee&8] &7ค่าธรรมเนียมการตาย &9" + fee.getAmount() + " Cubix &7ถูกหักออกจากบัญชีของคุณแล้ว!"));
         }
     }
 

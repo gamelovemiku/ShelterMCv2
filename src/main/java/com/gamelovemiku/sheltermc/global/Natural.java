@@ -1,10 +1,9 @@
 package com.gamelovemiku.sheltermc.global;
 
 import com.gamelovemiku.sheltermc.ShelterMCHelper;
-import com.gamelovemiku.sheltermc.tasks.AlertOnTopRoofTask;
+import com.gamelovemiku.sheltermc.tasks.AlertOnCloseRoofTask;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -15,7 +14,6 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
 
 public class Natural implements Listener{
@@ -37,7 +35,7 @@ public class Natural implements Listener{
 			if(player.getLocation().getY() >= 160) {
 				if (!running) {
 					running = true;
-					task = new AlertOnTopRoofTask(this.plugin, player).runTaskTimer(plugin, 0, 100);
+					task = new AlertOnCloseRoofTask(this.plugin, player).runTaskTimer(plugin, 0, 100);
 					//player.sendMessage("TASK IS ---> " + task.isCancelled());
 				}
 			}
@@ -53,13 +51,21 @@ public class Natural implements Listener{
 	@EventHandler
 	public void onBottomBedrock(PlayerMoveEvent event) {
 		Player player = event.getPlayer();
+		ShelterMCHelper helper = new ShelterMCHelper();
 
 		if(player.getWorld().equals(Bukkit.getWorld("world_shelter"))) {
-			if(player.getLocation().getY() < 30) {
-				player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, this.secondToTick(30), 2));
-				player.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, this.secondToTick(60), 2));
+			if(player.getLocation().getY() <= 30) {
+				if (!running) {
+					running = true;
+					task = new AlertOnCloseRoofTask(this.plugin, player).runTaskTimer(plugin, 0, 100);
+					//player.sendMessage("TASK IS ---> " + task.isCancelled());
+				}
+			}
 
-				player.sendMessage(ChatColor.GOLD + "⚠ " + ChatColor.BOLD + "WARNING " + ChatColor.YELLOW + " You are too close to the bottom! -" + player.getLocation().getBlockY());
+			if(player.getLocation().getY() < 160 && running) {
+				running = false;
+				task.cancel();
+				player.sendMessage("CANCELED IS ---> " + task.isCancelled());
 			}
 		}
 	}
@@ -70,7 +76,7 @@ public class Natural implements Listener{
 			if(player.getLocation().getY() >= 160) {
 				if (!running) {
 					running = true;
-					task = new AlertOnTopRoofTask(this.plugin, player).runTaskTimer(plugin, 0, 100);
+					task = new AlertOnCloseRoofTask(this.plugin, player).runTaskTimer(plugin, 0, 100);
 					//player.sendMessage("TASK IS ---> " + task.isCancelled());
 				}
 			}

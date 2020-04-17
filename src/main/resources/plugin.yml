@@ -12,3 +12,6 @@ commands:
   ascotcity:
     description: Your description
     usage: /<command>
+  limbo:
+    description: Your description
+    usage: /<command>
