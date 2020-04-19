@@ -105,7 +105,7 @@ public class LimboWorldPatch implements Listener, CommandExecutor {
                 event.setCancelled(false);
             } else {
                 event.setCancelled(true);
-                event.getPlayer().sendMessage(helper.formatInGameColor("&4!!! &8[&cAscotGuard&8] &cคุณไม่สามารถกระทำการใด ๆ ใน Ascot City ได้ นอกเหนือจากที่กำหนด"));
+                event.getPlayer().sendMessage(helper.formatInGameColor("&4!!! &8[&cLimbo&8] &cคุณไม่สามารถกระทำการใด ๆ ใน Limbo ได้ นอกเหนือจากที่กำหนด"));
             }
         }
     }

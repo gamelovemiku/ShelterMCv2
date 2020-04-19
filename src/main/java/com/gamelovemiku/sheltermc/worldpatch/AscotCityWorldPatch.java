@@ -8,6 +8,7 @@ import org.bukkit.Particle;
 import org.bukkit.Sound;
 import org.bukkit.block.Block;
 import org.bukkit.block.data.Ageable;
+import org.bukkit.block.data.BlockData;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -46,6 +47,22 @@ public class AscotCityWorldPatch implements Listener, CommandExecutor {
                     return true;
                 }
             }
+
+            if(args[0].equalsIgnoreCase("george")) {
+                if(args[1] != null) {
+                    sender.sendMessage("Make " + args[2] + " can do.. " + args[0] + " for " + args[1] + " sec!");
+                    new PermissionTimeOutCountdownTask(
+                            plugin,
+                            Bukkit.getPlayer(args[2]),
+                            "sheltermc.temp.georgewood.break",
+                            "world",
+                            "&fคุณเหลือเวลาอีก &e&l%time &eวินาที &fในตัดต้นไม้",
+                            Integer.valueOf(args[1]))
+                            .runTaskTimerAsynchronously(plugin, 0, helper.secondToTick(1));
+                    return true;
+                }
+            }
+
         }
         return true;
     }
@@ -97,6 +114,43 @@ public class AscotCityWorldPatch implements Listener, CommandExecutor {
                         break;
                 }
             }
+
+            if(player.hasPermission("sheltermc.temp.georgewood.break")) {
+                switch(block.getType().toString()) {
+                    case "OAK_WOOD":
+                        event.setCancelled(false);
+                        setRegenBlock(block, Material.OAK_WOOD, delay, Material.OAK_LOG);
+                        break;
+                    case "SPRUCE_WOOD":
+                        event.setCancelled(false);
+                        setRegenBlock(block, Material.SPRUCE_WOOD, delay, Material.SPRUCE_LOG);
+                        break;
+                    case "BIRCH_WOOD":
+                        event.setCancelled(false);
+                        setRegenBlock(block, Material.BIRCH_WOOD, delay, Material.BIRCH_LOG);
+                        break;
+                    case "JUNGLE_WOOD":
+                        event.setCancelled(false);
+                        setRegenBlock(block, Material.JUNGLE_WOOD, delay, Material.JUNGLE_LOG);
+                        break;
+                    case "ACACIA_WOOD":
+                        event.setCancelled(false);
+                        setRegenBlock(block, Material.ACACIA_WOOD, delay, Material.ACACIA_LOG);
+                        break;
+                    case "DARK_OAK_WOOD":
+                        event.setCancelled(false);
+                        setRegenBlock(block, Material.DARK_OAK_WOOD, delay, Material.DARK_OAK_LOG);
+                        break;
+                    default:
+                        if(!player.isOp()) {
+                            player.sendMessage(helper.formatInGameColor("&4!!! &8[&cAscotGuard&8] &cคุณไม่สามารถกระทำการใด ๆ ใน Ascot City ได้ นอกเหนือจากที่กำหนด"));
+                        } else {
+                            event.setCancelled(false);
+                        }
+                        break;
+                }
+            }
+
         }
     }
 
@@ -115,10 +169,23 @@ public class AscotCityWorldPatch implements Listener, CommandExecutor {
     public void setMaterial(Block block, Material mat, int time) {
         Bukkit.getScheduler().scheduleSyncDelayedTask(this.plugin, () -> {
             block.setType(mat);
+
             Ageable ageable = (Ageable) block.getBlockData();
             ageable.setAge(ageable.getMaximumAge());
             block.setBlockData(ageable);
+
             block.getWorld().playSound(block.getLocation(), Sound.ENTITY_CHICKEN_EGG, 1, 1);
+            block.getWorld().spawnParticle(Particle.COMPOSTER, block.getLocation().add(0, 1, 0), 30, 0.65,0.5,0.65,0.5);
+            block.getWorld().spawnParticle(Particle.HEART, block.getLocation().add(0, 1, 0), 5);
+        }, helper.secondToTick(helper.randomNumber(time)));
+    }
+
+    public void setRegenBlock(Block block, Material mat, int time, Material drop) {
+        block.setType(Material.AIR);
+        block.getWorld().dropItemNaturally(block.getLocation(), new ItemStack(drop, 1));
+        Bukkit.getScheduler().scheduleSyncDelayedTask(this.plugin, () -> {
+            block.setType(mat);
+            block.getWorld().playSound(block.getLocation(), Sound.BLOCK_WOOD_PLACE, 1, 1);
             block.getWorld().spawnParticle(Particle.COMPOSTER, block.getLocation().add(0, 1, 0), 30, 0.65,0.5,0.65,0.5);
             block.getWorld().spawnParticle(Particle.HEART, block.getLocation().add(0, 1, 0), 5);
         }, helper.secondToTick(helper.randomNumber(time)));
