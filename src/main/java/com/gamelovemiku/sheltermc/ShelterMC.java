@@ -6,6 +6,7 @@ import com.gamelovemiku.sheltermc.global.Mining;
 import com.gamelovemiku.sheltermc.global.Natural;
 import com.gamelovemiku.sheltermc.gameplay.PlayerGameplay;
 import com.gamelovemiku.sheltermc.perk.*;
+import com.gamelovemiku.sheltermc.perk.extras.PlanterPerk;
 import com.gamelovemiku.sheltermc.worldpatch.AscotCityWorldPatch;
 import com.gamelovemiku.sheltermc.worldpatch.LimboWorldPatch;
 import org.bukkit.Bukkit;
@@ -39,6 +40,8 @@ public class ShelterMC extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents(new NoLimboPerk(), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents(new FlowerPowerPerk(), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents(new AnimalsGodPerk(), (Plugin)this);
+
+        Bukkit.getServer().getPluginManager().registerEvents(new PlanterPerk(), (Plugin)this);
 
         Bukkit.getServer().getPluginManager().registerEvents(new AscotCityWorldPatch(this), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents(new LimboWorldPatch(this), (Plugin)this);
