@@ -1,6 +1,7 @@
 package com.gamelovemiku.sheltermc;
 
 import com.gamelovemiku.adapter.Vault;
+import com.gamelovemiku.sheltermc.achievement.CreatedShelterAchievement;
 import com.gamelovemiku.sheltermc.command.CommandAddon;
 import com.gamelovemiku.sheltermc.global.Mining;
 import com.gamelovemiku.sheltermc.global.Natural;
@@ -42,6 +43,9 @@ public class ShelterMC extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents(new AnimalsGodPerk(), (Plugin)this);
 
         Bukkit.getServer().getPluginManager().registerEvents(new PlanterPerk(), (Plugin)this);
+
+        //Achievement
+        Bukkit.getServer().getPluginManager().registerEvents(new CreatedShelterAchievement(this), (Plugin)this);
 
         Bukkit.getServer().getPluginManager().registerEvents(new AscotCityWorldPatch(this), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents(new LimboWorldPatch(this), (Plugin)this);
