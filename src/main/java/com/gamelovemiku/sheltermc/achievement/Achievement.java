@@ -13,7 +13,7 @@ public class Achievement implements Listener {
 
     private Plugin plugin;
     private String name = "Default";
-    private String permission = "sheltermc.default";
+    private String permission = "sheltermc.achi.default";
     private String world = "world";
 
     public Plugin getPlugin() {
@@ -51,6 +51,7 @@ public class Achievement implements Listener {
     public void checkAndUnlocked(Player player) {
         if(!player.hasPermission(getPermission())) {
             new ShelterMCHelper().runOnConsole("lp user " + player.getName() + " permission set " + getPermission() + " true world=" + world);
+            sendUnlockedMessage(player);
         }
 
     }

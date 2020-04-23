@@ -23,7 +23,6 @@ public class DaydreamAchievement extends Achievement implements Listener {
 
         if(player.getWorld().equals(Bukkit.getWorld("world_dreamyland"))) {
             checkAndUnlocked(player);
-            sendUnlockedMessage(player);
         }
 
     }

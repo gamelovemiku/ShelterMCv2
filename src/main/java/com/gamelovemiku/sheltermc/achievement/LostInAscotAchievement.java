@@ -12,7 +12,7 @@ public class LostInAscotAchievement extends Achievement implements Listener {
 
     public LostInAscotAchievement(Plugin plugin) {
         this.setPlugin(plugin);
-        this.setName("&eพื้นหญ้าสุดท้าย");
+        this.setName("&eพื้นหญ้า อากาศ และลม");
         this.setPermission("sheltermc.achi.lostinascot");
         this.setWorld("world");
     }
@@ -23,7 +23,6 @@ public class LostInAscotAchievement extends Achievement implements Listener {
 
         if (player.getWorld().equals(Bukkit.getWorld("world_ascotcity"))) {
             checkAndUnlocked(player);
-            sendUnlockedMessage(player);
         }
     }
 

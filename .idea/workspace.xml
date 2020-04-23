@@ -7,16 +7,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee938dcc-ad57-48cc-9a88-fff25464e37f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/Achievement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/AchievementInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/CreatedShelterAchievement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/DaydreamAchievement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/LostInAscotAchievement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/LostInLimboAchievement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/NightmareAchievement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/TrueStoriesAchievement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/WeAreCommunityAchievement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/WhereWeBelongAchievement.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/ShelterMC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/ShelterMC.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/ShelterMCHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/ShelterMCHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/Achievement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/Achievement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/CreatedShelterAchievement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/CreatedShelterAchievement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/DaydreamAchievement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/DaydreamAchievement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/LostInAscotAchievement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/LostInAscotAchievement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/LostInLimboAchievement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/LostInLimboAchievement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/NightmareAchievement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/NightmareAchievement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/TrueStoriesAchievement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/TrueStoriesAchievement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/command/CommandAddon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/command/CommandAddon.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,12 +67,8 @@
     <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="G:\ShelterMCv2\src\main\java\com\gamelovemiku\sheltermc\world" />
-      <recent name="G:\ShelterMCv2\src\main\java\com\gamelovemiku\adapter" />
-      <recent name="G:\ShelterMCv2\src\main\java\com\gamelovemiku\sheltermc\gameplay" />
-      <recent name="G:\ShelterMCv2\src\main\java\com\gamelovemiku\sheltermc\entity" />
-      <recent name="G:\ShelterMCv2\src\main\java\com\gamelovemiku\sheltermc\command" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.gamelovemiku.sheltermc.achievement" />
@@ -77,8 +76,12 @@
       <recent name="com.gamelovemiku.sheltermc.tasks" />
       <recent name="com.gamelovemiku.adapter" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="G:\ShelterMCv2\src\main\java\com\gamelovemiku\sheltermc\world" />
+      <recent name="G:\ShelterMCv2\src\main\java\com\gamelovemiku\adapter" />
+      <recent name="G:\ShelterMCv2\src\main\java\com\gamelovemiku\sheltermc\gameplay" />
+      <recent name="G:\ShelterMCv2\src\main\java\com\gamelovemiku\sheltermc\entity" />
+      <recent name="G:\ShelterMCv2\src\main\java\com\gamelovemiku\sheltermc\command" />
     </key>
   </component>
   <component name="RunManager">
@@ -161,46 +164,46 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="789" y="264" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586815547111" />
-    <state width="1877" height="339" key="GridCell.Tab.0.bottom" timestamp="1587595163702">
+    <state width="1877" height="258" key="GridCell.Tab.0.bottom" timestamp="1587681887820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1234" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587249458959" />
-    <state width="1877" height="339" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587595163702" />
-    <state width="1877" height="339" key="GridCell.Tab.0.center" timestamp="1587595163701">
+    <state width="1877" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587681887820" />
+    <state width="1877" height="258" key="GridCell.Tab.0.center" timestamp="1587681887820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1234" height="276" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587249458959" />
-    <state width="1877" height="339" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587595163701" />
-    <state width="1877" height="339" key="GridCell.Tab.0.left" timestamp="1587595163701">
+    <state width="1877" height="258" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587681887820" />
+    <state width="1877" height="258" key="GridCell.Tab.0.left" timestamp="1587681887820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1234" height="276" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587249458959" />
-    <state width="1877" height="339" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587595163701" />
-    <state width="1877" height="339" key="GridCell.Tab.0.right" timestamp="1587595163701">
+    <state width="1877" height="258" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587681887820" />
+    <state width="1877" height="258" key="GridCell.Tab.0.right" timestamp="1587681887820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1234" height="276" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587249458959" />
-    <state width="1877" height="339" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587595163701" />
-    <state width="1877" height="339" key="GridCell.Tab.1.bottom" timestamp="1587595163702">
+    <state width="1877" height="258" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587681887820" />
+    <state width="1877" height="258" key="GridCell.Tab.1.bottom" timestamp="1587681887820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1234" height="276" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587249458959" />
-    <state width="1877" height="339" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587595163702" />
-    <state width="1877" height="339" key="GridCell.Tab.1.center" timestamp="1587595163702">
+    <state width="1877" height="258" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587681887820" />
+    <state width="1877" height="258" key="GridCell.Tab.1.center" timestamp="1587681887820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1234" height="276" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587249458959" />
-    <state width="1877" height="339" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587595163702" />
-    <state width="1877" height="339" key="GridCell.Tab.1.left" timestamp="1587595163702">
+    <state width="1877" height="258" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587681887820" />
+    <state width="1877" height="258" key="GridCell.Tab.1.left" timestamp="1587681887820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1234" height="276" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587249458959" />
-    <state width="1877" height="339" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587595163702" />
-    <state width="1877" height="339" key="GridCell.Tab.1.right" timestamp="1587595163702">
+    <state width="1877" height="258" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587681887820" />
+    <state width="1877" height="258" key="GridCell.Tab.1.right" timestamp="1587681887820">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1234" height="276" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587249458959" />
-    <state width="1877" height="339" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587595163702" />
+    <state width="1877" height="258" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587681887820" />
     <state x="634" y="98" width="1286" height="846" key="SettingsEditor" timestamp="1586895180560">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

@@ -23,7 +23,6 @@ public class LostInLimboAchievement extends Achievement implements Listener {
 
         if (player.getWorld().equals(Bukkit.getWorld("world_limbo"))) {
             checkAndUnlocked(player);
-            sendUnlockedMessage(player);
         }
     }
 

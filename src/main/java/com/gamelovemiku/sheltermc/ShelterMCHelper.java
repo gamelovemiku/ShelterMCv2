@@ -12,6 +12,8 @@ import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Random;
 
 public class ShelterMCHelper {
@@ -47,5 +49,12 @@ public class ShelterMCHelper {
             return 1;
         }
         return num;
+    }
+
+    public void getServerTime() {
+        SimpleDateFormat date = new SimpleDateFormat("HH:mm:ss");
+        String time = date.format(Calendar.getInstance().getTime());
+        String times[] = time.split(":");
+        Bukkit.broadcastMessage("########## Server Time: " + times[0] + " นาฬิกา " + times[1] + " นาที " + times[2] + " วินาที");
     }
 }

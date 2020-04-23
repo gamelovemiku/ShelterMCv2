@@ -40,7 +40,7 @@ public class NightmareAchievement extends Achievement implements Listener {
             case RED_BED:
             case WHITE_BED:
             case YELLOW_BED:
-
+                player.sendMessage("################## #################");
                 break;
         }
 

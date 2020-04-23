@@ -1,7 +1,7 @@
 package com.gamelovemiku.sheltermc;
 
 import com.gamelovemiku.adapter.Vault;
-import com.gamelovemiku.sheltermc.achievement.CreatedShelterAchievement;
+import com.gamelovemiku.sheltermc.achievement.*;
 import com.gamelovemiku.sheltermc.command.CommandAddon;
 import com.gamelovemiku.sheltermc.global.Mining;
 import com.gamelovemiku.sheltermc.global.Natural;
@@ -46,7 +46,13 @@ public class ShelterMC extends JavaPlugin {
 
         //Achievement
         Bukkit.getServer().getPluginManager().registerEvents(new CreatedShelterAchievement(this), (Plugin)this);
+        Bukkit.getServer().getPluginManager().registerEvents(new DaydreamAchievement(this), (Plugin)this);
+        Bukkit.getServer().getPluginManager().registerEvents(new LostInAscotAchievement(this), (Plugin)this);
+        Bukkit.getServer().getPluginManager().registerEvents(new LostInLimboAchievement(this), (Plugin)this);
+        //Bukkit.getServer().getPluginManager().registerEvents(new NightmareAchievement(this), (Plugin)this);
+        //Bukkit.getServer().getPluginManager().registerEvents(new TrueStoriesAchievement(this), (Plugin)this);
 
+        //WorldPatch
         Bukkit.getServer().getPluginManager().registerEvents(new AscotCityWorldPatch(this), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents(new LimboWorldPatch(this), (Plugin)this);
 

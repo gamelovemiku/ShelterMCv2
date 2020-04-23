@@ -22,7 +22,6 @@ public class TrueStoriesAchievement extends Achievement implements Listener {
         Player player = event.getPlayer();
 
         checkAndUnlocked(player);
-        sendUnlockedMessage(player);
     }
 
 }

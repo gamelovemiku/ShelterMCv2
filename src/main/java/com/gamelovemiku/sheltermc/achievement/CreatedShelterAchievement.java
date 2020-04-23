@@ -14,7 +14,7 @@ public class CreatedShelterAchievement extends Achievement implements Listener {
 
     public CreatedShelterAchievement(Plugin plugin) {
         this.setPlugin(plugin);
-        this.setName("&eก้าวแรกของความหวัง");
+        this.setName("&eมุ่งสู่ใต้พิภพ");
         this.setPermission("sheltermc.achi.createdshelter");
         this.setWorld("world");
     }
@@ -22,9 +22,7 @@ public class CreatedShelterAchievement extends Achievement implements Listener {
     @EventHandler
     public void doAction(IslandEvent.IslandEnterEvent event) {
         Player player = Bukkit.getPlayer(event.getPlayerUUID());
-
         checkAndUnlocked(player);
-        sendUnlockedMessage(player);
     }
 
 }
