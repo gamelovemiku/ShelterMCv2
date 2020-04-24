@@ -15,3 +15,6 @@ commands:
   limbo:
     description: Your description
     usage: /<command>
+  shelterchest:
+    description: Your description
+    usage: /<command>

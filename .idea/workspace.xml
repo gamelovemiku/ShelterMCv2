@@ -7,19 +7,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ee938dcc-ad57-48cc-9a88-fff25464e37f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/WeAreCommunityAchievement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/WhereWeBelongAchievement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/global/RandomItemChest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/ShelterMC.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/ShelterMC.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/ShelterMCHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/ShelterMCHelper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/Achievement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/Achievement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/CreatedShelterAchievement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/CreatedShelterAchievement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/DaydreamAchievement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/DaydreamAchievement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/LostInAscotAchievement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/LostInAscotAchievement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/LostInLimboAchievement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/LostInLimboAchievement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/NightmareAchievement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/NightmareAchievement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/TrueStoriesAchievement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/TrueStoriesAchievement.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/command/CommandAddon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/command/CommandAddon.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/WeAreCommunityAchievement.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/gamelovemiku/sheltermc/achievement/WeAreCommunityAchievement.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -64,7 +56,7 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2974977" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.appearance" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -144,10 +136,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="740" y="224" key="#com.intellij.ide.macro.MacrosDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586672460743" />
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1587589484960">
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser" timestamp="1587760482893">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587589484960" />
+    <state x="765" y="229" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587760482893" />
     <state x="711" y="388" width="498" height="269" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1585484775991">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -164,50 +156,50 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="789" y="264" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586815547111" />
-    <state width="1877" height="258" key="GridCell.Tab.0.bottom" timestamp="1587681887820">
+    <state width="1877" height="252" key="GridCell.Tab.0.bottom" timestamp="1587768136374">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1234" height="276" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587249458959" />
-    <state width="1877" height="258" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587681887820" />
-    <state width="1877" height="258" key="GridCell.Tab.0.center" timestamp="1587681887820">
+    <state width="1877" height="252" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587768136374" />
+    <state width="1877" height="252" key="GridCell.Tab.0.center" timestamp="1587768136373">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1234" height="276" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587249458959" />
-    <state width="1877" height="258" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587681887820" />
-    <state width="1877" height="258" key="GridCell.Tab.0.left" timestamp="1587681887820">
+    <state width="1877" height="252" key="GridCell.Tab.0.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587768136373" />
+    <state width="1877" height="252" key="GridCell.Tab.0.left" timestamp="1587768136373">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1234" height="276" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587249458959" />
-    <state width="1877" height="258" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587681887820" />
-    <state width="1877" height="258" key="GridCell.Tab.0.right" timestamp="1587681887820">
+    <state width="1877" height="252" key="GridCell.Tab.0.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587768136373" />
+    <state width="1877" height="252" key="GridCell.Tab.0.right" timestamp="1587768136374">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1234" height="276" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587249458959" />
-    <state width="1877" height="258" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587681887820" />
-    <state width="1877" height="258" key="GridCell.Tab.1.bottom" timestamp="1587681887820">
+    <state width="1877" height="252" key="GridCell.Tab.0.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587768136374" />
+    <state width="1877" height="258" key="GridCell.Tab.1.bottom" timestamp="1587768136368">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1234" height="276" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587249458959" />
-    <state width="1877" height="258" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587681887820" />
-    <state width="1877" height="258" key="GridCell.Tab.1.center" timestamp="1587681887820">
+    <state width="1877" height="258" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587768136368" />
+    <state width="1877" height="258" key="GridCell.Tab.1.center" timestamp="1587768136367">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1234" height="276" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587249458959" />
-    <state width="1877" height="258" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587681887820" />
-    <state width="1877" height="258" key="GridCell.Tab.1.left" timestamp="1587681887820">
+    <state width="1877" height="258" key="GridCell.Tab.1.center/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587768136367" />
+    <state width="1877" height="258" key="GridCell.Tab.1.left" timestamp="1587768136367">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1234" height="276" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587249458959" />
-    <state width="1877" height="258" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587681887820" />
-    <state width="1877" height="258" key="GridCell.Tab.1.right" timestamp="1587681887820">
+    <state width="1877" height="258" key="GridCell.Tab.1.left/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587768136367" />
+    <state width="1877" height="258" key="GridCell.Tab.1.right" timestamp="1587768136367">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="1234" height="276" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1587249458959" />
-    <state width="1877" height="258" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587681887820" />
-    <state x="634" y="98" width="1286" height="846" key="SettingsEditor" timestamp="1586895180560">
+    <state width="1877" height="258" key="GridCell.Tab.1.right/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587768136367" />
+    <state x="119" y="194" width="1286" height="846" key="SettingsEditor" timestamp="1587757680470">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="634" y="98" width="1286" height="846" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1586895180560" />
+    <state x="119" y="194" width="1286" height="846" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1587757680470" />
     <state x="607" y="134" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1587043389865">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

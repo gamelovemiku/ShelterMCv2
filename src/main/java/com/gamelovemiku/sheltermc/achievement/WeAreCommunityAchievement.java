@@ -1,5 +1,6 @@
 package com.gamelovemiku.sheltermc.achievement;
 
+import com.gamelovemiku.sheltermc.ShelterMCHelper;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -17,8 +18,8 @@ public class WeAreCommunityAchievement extends Achievement implements Listener {
 
     @EventHandler
     public void doAction(AsyncPlayerChatEvent event) {
-        Player player = event.getPlayer();
-        checkAndUnlocked(player);
+        event.setMessage(event.getMessage().replace("@cyantopinkz", new ShelterMCHelper().formatInGameColor("&9&n@cyantopinkz")));
+        //checkAndUnlocked(event.getPlayer());
     }
 
 }

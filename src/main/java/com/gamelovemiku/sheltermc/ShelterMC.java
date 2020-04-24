@@ -6,6 +6,7 @@ import com.gamelovemiku.sheltermc.command.CommandAddon;
 import com.gamelovemiku.sheltermc.global.Mining;
 import com.gamelovemiku.sheltermc.global.Natural;
 import com.gamelovemiku.sheltermc.gameplay.PlayerGameplay;
+import com.gamelovemiku.sheltermc.global.RandomItemChest;
 import com.gamelovemiku.sheltermc.perk.*;
 import com.gamelovemiku.sheltermc.perk.extras.PlanterPerk;
 import com.gamelovemiku.sheltermc.worldpatch.AscotCityWorldPatch;
@@ -33,6 +34,7 @@ public class ShelterMC extends JavaPlugin {
 
         Bukkit.getServer().getPluginManager().registerEvents(new Mining(), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents(new Natural(this), (Plugin)this);
+        Bukkit.getServer().getPluginManager().registerEvents(new RandomItemChest(this), (Plugin)this);
 
         Bukkit.getServer().getPluginManager().registerEvents(new PlayerGameplay(), (Plugin)this);
 
@@ -49,6 +51,8 @@ public class ShelterMC extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents(new DaydreamAchievement(this), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents(new LostInAscotAchievement(this), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents(new LostInLimboAchievement(this), (Plugin)this);
+        Bukkit.getServer().getPluginManager().registerEvents(new WeAreCommunityAchievement(this), (Plugin)this);
+        Bukkit.getServer().getPluginManager().registerEvents(new WhereWeBelongAchievement(this), (Plugin)this);
         //Bukkit.getServer().getPluginManager().registerEvents(new NightmareAchievement(this), (Plugin)this);
         //Bukkit.getServer().getPluginManager().registerEvents(new TrueStoriesAchievement(this), (Plugin)this);
 
@@ -56,8 +60,11 @@ public class ShelterMC extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents(new AscotCityWorldPatch(this), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents(new LimboWorldPatch(this), (Plugin)this);
 
+        //new RandomItemChest(this).registerChestLocation();
+
         this.getCommand("testpl").setExecutor(new CommandAddon());
         this.getCommand("ascotcity").setExecutor(new AscotCityWorldPatch(this));
+        this.getCommand("shelterchest").setExecutor(new RandomItemChest(this));
         this.getCommand("limbo").setExecutor(new LimboWorldPatch(this));
     }
 
