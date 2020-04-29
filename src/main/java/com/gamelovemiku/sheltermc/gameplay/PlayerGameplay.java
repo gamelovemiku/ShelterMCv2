@@ -85,11 +85,13 @@ public class PlayerGameplay implements Listener {
         Player player = event.getPlayer();
 
         if (player.getWorld() == Bukkit.getWorld("world_limbo")) { //Out from limbo
-            Bukkit.broadcastMessage("DEBUG: You come from -> " + world.getName());
+            //Bukkit.broadcastMessage("DEBUG: You come from -> " + world.getName());
             setSkin(player, "Skull");
-        } else {
-            Bukkit.broadcastMessage("DEBUG: You come from -> " + world.getName());
-            Bukkit.broadcastMessage("DEBUG: Removed skin of -> " + player.getName());
+        }
+
+        if(event.getFrom() == Bukkit.getWorld("world_limbo")){
+            //Bukkit.broadcastMessage("DEBUG: You come from -> " + world.getName());
+            //Bukkit.broadcastMessage("DEBUG: Removed skin of -> " + player.getName());
             Bukkit.getServer().dispatchCommand((CommandSender)Bukkit.getConsoleSender(), "skin clear " + player.getName().toString());
         }
     }

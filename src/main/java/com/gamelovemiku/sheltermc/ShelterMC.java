@@ -3,6 +3,7 @@ package com.gamelovemiku.sheltermc;
 import com.gamelovemiku.adapter.Vault;
 import com.gamelovemiku.sheltermc.achievement.*;
 import com.gamelovemiku.sheltermc.command.CommandAddon;
+import com.gamelovemiku.sheltermc.global.ExampleGUI;
 import com.gamelovemiku.sheltermc.global.Mining;
 import com.gamelovemiku.sheltermc.global.Natural;
 import com.gamelovemiku.sheltermc.gameplay.PlayerGameplay;
@@ -53,12 +54,16 @@ public class ShelterMC extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents(new LostInLimboAchievement(this), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents(new WeAreCommunityAchievement(this), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents(new WhereWeBelongAchievement(this), (Plugin)this);
+        Bukkit.getServer().getPluginManager().registerEvents(new DeadByPoisonAchievement(this), (Plugin)this);
+
         //Bukkit.getServer().getPluginManager().registerEvents(new NightmareAchievement(this), (Plugin)this);
         //Bukkit.getServer().getPluginManager().registerEvents(new TrueStoriesAchievement(this), (Plugin)this);
 
         //WorldPatch
         Bukkit.getServer().getPluginManager().registerEvents(new AscotCityWorldPatch(this), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents(new LimboWorldPatch(this), (Plugin)this);
+
+        Bukkit.getServer().getPluginManager().registerEvents(new ExampleGUI(), (Plugin)this);
 
         //new RandomItemChest(this).registerChestLocation();
 

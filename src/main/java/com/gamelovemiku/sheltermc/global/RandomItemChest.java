@@ -24,7 +24,6 @@ public class RandomItemChest implements CommandExecutor, Listener {
 
     private Plugin plugin;
     private List<Material> materialList = new ArrayList<Material>();
-    private List<Location> chestLocationList = new ArrayList<Location>();
     private List<Location> chestLocationOpenedList = new ArrayList<Location>();
 
     public RandomItemChest(Plugin plugin) {
@@ -49,34 +48,39 @@ public class RandomItemChest implements CommandExecutor, Listener {
         this.materialList.add(Material.BREAD);
         this.materialList.add(Material.MELON_SLICE);
         this.materialList.add(Material.GUNPOWDER);
-        this.materialList.add(Material.FLINT_AND_STEEL);
+        this.materialList.add(Material.FLINT);
         this.materialList.add(Material.SUGAR_CANE);
         this.materialList.add(Material.COCOA_BEANS);
         this.materialList.add(Material.SUGAR);
         this.materialList.add(Material.BOWL);
         this.materialList.add(Material.ARROW);
-
+        this.materialList.add(Material.FIREWORK_STAR);
+        this.materialList.add(Material.EGG);
+        this.materialList.add(Material.BONE_MEAL);
+        this.materialList.add(Material.GLASS_BOTTLE);
+        this.materialList.add(Material.OAK_SAPLING);
+        this.materialList.add(Material.SPRUCE_SAPLING);
+        this.materialList.add(Material.DEAD_BUSH);
+        this.materialList.add(Material.KELP);
+        this.materialList.add(Material.TALL_GRASS);
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
-        chestLocationList.clear();
-
-        sender.sendMessage("=======================================");
-        sender.sendMessage("ARRAY SIZE: " + chestLocationList.size());
-        sender.sendMessage("BLOCK: " + chestLocationList.get(0).getBlock().getType().toString());
-
+        chestLocationOpenedList.clear();
+        sender.sendMessage("PENDING TO RESTORE: " + chestLocationOpenedList.size() + " chests.");
+        sender.sendMessage("ITEMS: " + materialList.size() + " types.");
         return true;
     }
 
     @EventHandler
     public void onClickedBlock(PlayerInteractEvent event) {
-        try {
+        if(event.getClickedBlock() != null) {
             Player player = event.getPlayer();
             Block block = event.getClickedBlock();
-            if (block.getWorld().equals(Bukkit.getWorld("world_ascotcity"))) {
-                //player.sendMessage("CLICKED: " + block.getType().toString() + " at X" + block.getLocation().getX() + " Y" + block.getLocation().getY() + " Z" + block.getLocation().getZ());
-                if (block.getType().equals(Material.CHEST)) {
+            try {
+                if (block.getWorld().equals(Bukkit.getWorld("world_ascotcity")) && block.getType().equals(Material.CHEST)) {
+                    player.sendMessage("CLICKED: " + block.getType().toString() + " at X" + block.getLocation().getX() + " Y" + block.getLocation().getY() + " Z" + block.getLocation().getZ());
                     if (isOpened(block) == false) {
                         player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_YES, 1, 1);
                         putIntoChest(block);
@@ -89,12 +93,11 @@ public class RandomItemChest implements CommandExecutor, Listener {
                         player.sendMessage(new ShelterMCHelper().formatInGameColor("&7# &8[&6Chest&8] &7ดูเหมือนว่าจะมีคนเอาของจากล่องนี้ไปแล้ว ลองมาดูใหม่ทีหลังนะ"));
                     }
                 }
-            }
-        } catch (NullPointerException error) {
-            for (Player playerOperater : Bukkit.getServer().getOnlinePlayers()) {
-                if (playerOperater.isOp()) {
-                    event.getPlayer().sendMessage(new ShelterMCHelper().formatInGameColor(
-                            "&c&lERROR WATCHDOGS: &6Failed to put item in chest at " + event.getClickedBlock().getLocation().toString()));
+            } catch (NullPointerException error) {
+                for (Player admin : Bukkit.getOnlinePlayers()) {
+                    if(admin.isOp()) {
+                        admin.sendMessage(new ShelterMCHelper().formatInGameColor("&c&lERROR WATCHDOGS: &6Failed to put item in chest. (world:ascotcity)"));
+                    }
                 }
             }
         }

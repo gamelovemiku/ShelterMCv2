@@ -20,7 +20,6 @@ public class TrueStoriesAchievement extends Achievement implements Listener {
     @EventHandler
     public void doAction(PlayerJoinEvent event) {
         Player player = event.getPlayer();
-
         checkAndUnlocked(player);
     }
 

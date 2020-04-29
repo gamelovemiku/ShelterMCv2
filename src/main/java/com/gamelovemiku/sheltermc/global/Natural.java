@@ -12,8 +12,6 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.plugin.Plugin;
-import org.bukkit.potion.PotionEffect;
-import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitTask;
 
 public class Natural implements Listener{
@@ -41,9 +39,7 @@ public class Natural implements Listener{
 			}
 
 			if(player.getLocation().getY() < 160 && running) {
-				running = false;
-				task.cancel();
-				player.sendMessage("CANCELED IS ---> " + task.isCancelled());
+				reset(event.getPlayer());
 			}
 		}
 	}
@@ -63,9 +59,7 @@ public class Natural implements Listener{
 			}
 
 			if(player.getLocation().getY() < 160 && running) {
-				running = false;
-				task.cancel();
-				player.sendMessage("CANCELED IS ---> " + task.isCancelled());
+				reset(event.getPlayer());
 			}
 		}
 	}
@@ -82,23 +76,27 @@ public class Natural implements Listener{
 			}
 
 			if(player.getLocation().getY() < 160 && running) {
-				running = false;
-				task.cancel();
-				player.sendMessage("CANCELED IS ---> " + task.isCancelled());
+				reset(event.getPlayer());
 			}
 		}
 	}
 
 	public void onLeave(PlayerQuitEvent event) {
-		running = false;
-		task.cancel();
+		reset(event.getPlayer());
 	}
 
 	public void onDeath(PlayerDeathEvent event) {
+		if(event.getEntity() instanceof Player) {
+			reset(event.getEntity());
+		}
+	}
+
+	public void reset(Player player) {
 		running = false;
 		task.cancel();
+		player.getActivePotionEffects().clear();
 	}
-	
+
 	public int secondToTick(int second) {
 		return 20 * second;
 	}

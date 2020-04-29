@@ -15,6 +15,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
+import org.bukkit.event.player.PlayerChangedWorldEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 
@@ -107,6 +108,13 @@ public class LimboWorldPatch implements Listener, CommandExecutor {
                 event.setCancelled(true);
                 event.getPlayer().sendMessage(helper.formatInGameColor("&4!!! &8[&cLimbo&8] &cคุณไม่สามารถกระทำการใด ๆ ใน Limbo ได้ นอกเหนือจากที่กำหนด"));
             }
+        }
+    }
+
+    @EventHandler
+    public void onChangeWorld(PlayerChangedWorldEvent event) {
+        if(event.getPlayer().getWorld().equals(Bukkit.getWorld("world_limbo"))) {
+            new ShelterMCHelper().runOnConsole("lp user " + event.getPlayer().getName() + " parent set limbo world=world_limbo");
         }
     }
 

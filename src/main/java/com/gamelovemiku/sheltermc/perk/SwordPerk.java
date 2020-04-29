@@ -50,7 +50,7 @@ public class SwordPerk extends Perk implements Listener {
                         }
                     } else {
                         doAction(entity, change[0]);
-                        killer.sendMessage("You don't have permission MONSTER WILL SPAWN! USING DEFAULT");
+                        killer.sendTitle("", helper.formatInGameColor("&6&lWARNING: &fMonster ขยายตัว!"), 15, 35,15);
                     }
                     break;
                 default:
@@ -99,7 +99,7 @@ public class SwordPerk extends Perk implements Listener {
         Zombie zombie = (Zombie) location.getWorld().spawnEntity(location, EntityType.ZOMBIE);
         zombie.setBaby(true);
         zombie.setRemoveWhenFarAway(true);
-        zombie.setCustomName(ChatColor.RED + "₪ " + ChatColor.BOLD + "Revenger Kids");
+        zombie.setCustomName(ChatColor.RED + "₪ " + ChatColor.BOLD + "Revenger Kid");
         zombie.setHealth(10);
         zombie.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, helper.secondToTick(15), 3));
         return zombie;
@@ -108,7 +108,7 @@ public class SwordPerk extends Perk implements Listener {
     public CaveSpider spawnCaveSpider(Location location) {
         CaveSpider cavespider = (CaveSpider) location.getWorld().spawnEntity(location, EntityType.CAVE_SPIDER);
         cavespider.setRemoveWhenFarAway(true);
-        cavespider.setCustomName(ChatColor.AQUA + "₪ " + ChatColor.BOLD + "Poison Spider");
+        cavespider.setCustomName(ChatColor.AQUA + " " + ChatColor.BOLD + "Angry Spider");
         cavespider.setHealth(6);
         cavespider.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, helper.secondToTick(15), 6));
         cavespider.setTicksLived(helper.secondToTick(30));

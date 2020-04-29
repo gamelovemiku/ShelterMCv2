@@ -33,14 +33,6 @@ public class AlertOnCloseRoofTask extends BukkitRunnable {
             player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 10, 1);
 
             player.sendTitle(helper.formatInGameColor("&c&lDANGER!"), helper.formatInGameColor("&fมีสารเคมีเข้มข้นสูงบริเวณนี้! โปรดหลีกเลี่ยง!"), 10, 35, 10);
-        } else if(player.getLocation().getY() <= 30) {
-            player.addPotionEffect(new PotionEffect(PotionEffectType.BLINDNESS, helper.secondToTick(150), 2));
-            player.addPotionEffect(new PotionEffect(PotionEffectType.WEAKNESS, helper.secondToTick(150), 2));
-            player.addPotionEffect(new PotionEffect(PotionEffectType.HUNGER, helper.secondToTick(150), 3));
-
-            player.playSound(player.getLocation(), Sound.BLOCK_NOTE_BLOCK_BELL, 10, 1);
-
-            player.sendTitle(helper.formatInGameColor("&r"), helper.formatInGameColor("&c&lDANGER! &fแรงดันใต้โลกสูง!"), 10, 35, 10);
         } else {
             this.cancel();
         }
