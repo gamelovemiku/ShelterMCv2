@@ -18,3 +18,9 @@ commands:
   shelterchest:
     description: Your description
     usage: /<command>
+  stock:
+    description: Your description
+    usage: /<command>
+  downloader:
+    description: Your description
+    usage: /<command>

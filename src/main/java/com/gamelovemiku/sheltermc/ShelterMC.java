@@ -3,13 +3,15 @@ package com.gamelovemiku.sheltermc;
 import com.gamelovemiku.adapter.Vault;
 import com.gamelovemiku.sheltermc.achievement.*;
 import com.gamelovemiku.sheltermc.command.CommandAddon;
-import com.gamelovemiku.sheltermc.global.ExampleGUI;
+import com.gamelovemiku.sheltermc.command.ResourcePackCMD;
+import com.gamelovemiku.sheltermc.gameplay.FoodPower;
 import com.gamelovemiku.sheltermc.global.Mining;
 import com.gamelovemiku.sheltermc.global.Natural;
 import com.gamelovemiku.sheltermc.gameplay.PlayerGameplay;
 import com.gamelovemiku.sheltermc.global.RandomItemChest;
 import com.gamelovemiku.sheltermc.perk.*;
 import com.gamelovemiku.sheltermc.perk.extras.PlanterPerk;
+import com.gamelovemiku.sheltermc.tradingstock.StockCommand;
 import com.gamelovemiku.sheltermc.worldpatch.AscotCityWorldPatch;
 import com.gamelovemiku.sheltermc.worldpatch.LimboWorldPatch;
 import org.bukkit.Bukkit;
@@ -63,14 +65,17 @@ public class ShelterMC extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents(new AscotCityWorldPatch(this), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents(new LimboWorldPatch(this), (Plugin)this);
 
-        Bukkit.getServer().getPluginManager().registerEvents(new ExampleGUI(), (Plugin)this);
+        Bukkit.getServer().getPluginManager().registerEvents(new FoodPower(), (Plugin)this);
 
-        //new RandomItemChest(this).registerChestLocation();
+        //Hook placeholder to PlaceholderAPI
+        //new StockPlaceholderRegistration().register();
 
         this.getCommand("testpl").setExecutor(new CommandAddon());
         this.getCommand("ascotcity").setExecutor(new AscotCityWorldPatch(this));
         this.getCommand("shelterchest").setExecutor(new RandomItemChest(this));
         this.getCommand("limbo").setExecutor(new LimboWorldPatch(this));
+        this.getCommand("downloader").setExecutor(new ResourcePackCMD());
+        this.getCommand("stock").setExecutor(new StockCommand());
     }
 
     @Override

@@ -10,6 +10,7 @@ import com.sk89q.worldguard.protection.regions.RegionContainer;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Location;
+import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 
 import java.text.SimpleDateFormat;
@@ -39,7 +40,7 @@ public class ShelterMCHelper {
     }
 
     public void sendSubtitle(Player player, String message, String description) {
-        player.sendTitle(null, message, 500, 3000, 500);
+        player.sendTitle(null, message, 15, 40, 15);
     }
 
     public int randomNumber(int max) {
@@ -56,5 +57,28 @@ public class ShelterMCHelper {
         String time = date.format(Calendar.getInstance().getTime());
         String times[] = time.split(":");
         Bukkit.broadcastMessage("########## Server Time: " + times[0] + " นาฬิกา " + times[1] + " นาที " + times[2] + " วินาที");
+    }
+
+    public void displayErrorContact(Player player) {
+        player.playSound(player.getLocation(), Sound.ENTITY_CAT_BEG_FOR_FOOD, 1,1);
+        player.sendMessage("");
+        player.sendMessage(formatInGameColor("&cหากคุณเห็นข้อความนี้.. หมายความว่าเซิร์ฟเวอร์ทำงานไม่ปกติอยู่ในขณะนี้"));
+        player.sendMessage(formatInGameColor("&cโปรดติดต่อ Admin หรือทีมงานให้ด่วนที่สุด เพื่อการแก้ไขปัญหาที่รวดเร็ว"));
+        player.sendMessage("");
+        player.sendMessage(formatInGameColor("&c&l[&6รายงานปัญหานี้&c&l]&r  &c&l[&6แสดงรายชื่อทีมงานที่กำลังออนไลน์&c&l]"));
+    }
+
+    public void displayErrorContact(Player player, String msg) {
+        player.playSound(player.getLocation(), Sound.ENTITY_CAT_BEG_FOR_FOOD, 1,1);
+        player.sendMessage("");
+        player.sendMessage(formatInGameColor("&cหากคุณเห็นข้อความนี้.. หมายความว่าเซิร์ฟเวอร์ทำงานไม่ปกติอยู่ในขณะนี้"));
+        player.sendMessage(formatInGameColor("&cโปรดติดต่อ Admin หรือทีมงานให้ด่วนที่สุด เพื่อการแก้ไขปัญหาที่รวดเร็ว"));
+        player.sendMessage(formatInGameColor("&4&lPLOBLEM LOG: &7" + msg.toUpperCase()));
+        player.sendMessage("");
+        player.sendMessage(formatInGameColor("&c&l[&6รายงานปัญหานี้&c&l]&r  &c&l[&6แสดงรายชื่อทีมงานที่กำลังออนไลน์&c&l]"));
+    }
+
+    public void sendJsonMessage(Player player, String msg) {
+        runOnConsole("tellraw " + player.getName() + " " + msg);
     }
 }

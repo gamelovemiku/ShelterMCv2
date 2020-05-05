@@ -80,7 +80,7 @@ public class RandomItemChest implements CommandExecutor, Listener {
             Block block = event.getClickedBlock();
             try {
                 if (block.getWorld().equals(Bukkit.getWorld("world_ascotcity")) && block.getType().equals(Material.CHEST)) {
-                    player.sendMessage("CLICKED: " + block.getType().toString() + " at X" + block.getLocation().getX() + " Y" + block.getLocation().getY() + " Z" + block.getLocation().getZ());
+                    //player.sendMessage("CLICKED: " + block.getType().toString() + " at X" + block.getLocation().getX() + " Y" + block.getLocation().getY() + " Z" + block.getLocation().getZ());
                     if (isOpened(block) == false) {
                         player.playSound(player.getLocation(), Sound.ENTITY_VILLAGER_YES, 1, 1);
                         putIntoChest(block);

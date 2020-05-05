@@ -146,6 +146,7 @@ public class Mining implements Listener {
 
 		for (Player p : Bukkit.getServer().getOnlinePlayers()) {
 			if (p.isOp()) {
+				p.playSound(p.getLocation(), Sound.BLOCK_PISTON_CONTRACT, 1,1);
 				p.sendMessage(helper.formatInGameColor("&c!! &4[&cAntiCheat Watchdogs&4] &c" + player.getName()) + " ถูกดึกกลับมาที่เดิมจากการใช้ " + event.getHack());
 			}
 		}
@@ -159,6 +160,7 @@ public class Mining implements Listener {
 
 		for (Player p : Bukkit.getServer().getOnlinePlayers()) {
 			if (p.isOp()) {
+				p.playSound(p.getLocation(), Sound.BLOCK_PISTON_CONTRACT, 1,1);
 				p.sendMessage(helper.formatInGameColor("&c!! &4[&cAntiCheat Watchdogs&4] &c" + player.getName()) + " กำลังถูกสงสัยว่าจะใช้ " + event.getHack());
 			}
 		}
