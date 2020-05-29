@@ -34,7 +34,7 @@ public class PlayerGameplay implements Listener {
         player = (Player) event.getEntity();
         DeathFee fee = new DeathFee(player, 8);
 
-        if(player.hasPermission("sheltermc.role.fighter")) {
+        if(player.hasPermission("sheltermc.deathfee.5")) {
             fee.setAmount(5.5);
         }
 
@@ -73,9 +73,9 @@ public class PlayerGameplay implements Listener {
         event.setCancelled(true);
         player = event.getPlayer();
         if (player.getWorld().getTime() > 14000) {
-            sendCustomMessage("&a&lDREAMYLAND &aยังไม่พร้อมให้เล่นในช่วงนี้");
+            sendCustomMessage("&a&lDREAMLAND &aยังไม่พร้อมให้เล่นในช่วงนี้");
         } else {
-            sendCustomMessage("&c&lYOU CAN DREAMING ONLY AT NIGHT!");
+            sendCustomMessage("&cDREAMLAND กำลังอยู่ในช่วงพัฒนา");
         }
     }
 

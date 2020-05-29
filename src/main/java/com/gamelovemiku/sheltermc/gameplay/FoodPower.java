@@ -17,7 +17,7 @@ public class FoodPower implements Listener {
         Player player = event.getPlayer();
         ShelterMCHelper helper = new ShelterMCHelper();
 
-        player.sendMessage("EATING ::::::::: " + itemStack.getType());
+        //player.sendMessage("EATING ::::::::: " + itemStack.getType());
 
         switch (itemStack.getType()) {
             case COOKED_RABBIT:
@@ -39,7 +39,7 @@ public class FoodPower implements Listener {
                 break;
             case GOLDEN_APPLE:
                 player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, helper.secondToTick(120), 3));
-                player.sendTitle("", helper.formatInGameColor("&d+ Regeneration III, Haste II"), 15,35,15);
+                player.sendTitle("", helper.formatInGameColor("&d+ Regeneration III"), 15,35,15);
                 break;
             case ENCHANTED_GOLDEN_APPLE:
                 player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, helper.secondToTick(600), 3));
@@ -50,7 +50,7 @@ public class FoodPower implements Listener {
                 player.sendTitle("", helper.formatInGameColor("&e+&e&lGOLDEN APPLE EFFECT!"), 15,35,15);
                 break;
             case SWEET_BERRIES:
-                player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, helper.secondToTick(30), 1));
+                player.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, helper.secondToTick(15), 1));
                 player.sendTitle("", helper.formatInGameColor("&d+ Night Vision I"), 15,35,15);
                 break;
         }

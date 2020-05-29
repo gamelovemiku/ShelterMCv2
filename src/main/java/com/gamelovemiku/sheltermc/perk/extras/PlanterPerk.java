@@ -41,7 +41,7 @@ public class PlanterPerk extends Perk implements Listener {
         bb.onBlockBreak(event);
 
         if(player.getWorld() == Bukkit.getWorld("world_shelter") && bb.checkIsland(event, player, block.getLocation(), Flags.BREAK_BLOCKS)) {
-            player.sendMessage(block.getType().toString() + " !!!!");
+            //player.sendMessage(block.getType().toString() + " !!!!");
             switch (block.getType().toString()) {
                 case "GRASS_BLOCK":
                     if (player.hasPermission("sheltermc.perk.planter.lv0")) {
@@ -65,7 +65,7 @@ public class PlanterPerk extends Perk implements Listener {
             case "GRASS_BLOCK":
                 if(helper.randomNumber(100) < change) {
                     int rnd = helper.randomNumber(100);
-                    player.sendMessage(rnd + "/100 !!!!");
+                    //player.sendMessage(rnd + "/100 !!!!");
                     if (rnd <= 20) {
                         block.getWorld().dropItemNaturally(block.getLocation(), new ItemStack(Material.WHEAT_SEEDS, 1));
                     } else if(rnd <= 40) {

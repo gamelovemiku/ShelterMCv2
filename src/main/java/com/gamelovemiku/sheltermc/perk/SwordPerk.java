@@ -50,7 +50,6 @@ public class SwordPerk extends Perk implements Listener {
                         }
                     } else {
                         doAction(entity, change[0]);
-                        killer.sendTitle("", helper.formatInGameColor("&6&lWARNING: &fMonster ขยายตัว!"), 15, 35,15);
                     }
                     break;
                 default:
@@ -89,6 +88,7 @@ public class SwordPerk extends Perk implements Listener {
         if(helper.randomNumber(100) < change) {
             for(int i = 0; i < helper.randomNumber(maxspawn); i++) {
                 world.spawnEntity(location, entity);
+                killer.sendTitle("", helper.formatInGameColor("&6&lWARNING: &fMonster ขยายตัว!"), 15, 35,15);
             }
             helper.sendSubtitle(killer, null, ChatColor.RED + "☠ " + ChatColor.BOLD + "Monster นี้ได้รับการวิวัฒนาการมาจากสารพิษ!");
         }

@@ -28,7 +28,7 @@ public class DelayBlockPlaceTask extends BukkitRunnable {
     @Override
     public void run() {
         int rnd = helper.randomNumber(change);
-        Bukkit.broadcastMessage("REGEN... change:" + String.valueOf(rnd) + "=" + (change-1) + " to replant");
+        //Bukkit.broadcastMessage("REGEN... change:" + String.valueOf(rnd) + "=" + (change-1) + " to replant");
         if(rnd == (change-1)) {
             Bukkit.broadcastMessage("PLANTED!");
             block.setType(Material.WHITE_WOOL);

@@ -38,7 +38,7 @@ public class CropMasterPerk extends Perk implements Listener {
         bb.onBlockBreak(event);
 
         if(player.getWorld() == Bukkit.getWorld("world_shelter") && bb.checkIsland(event, player, block.getLocation(), Flags.BREAK_BLOCKS)) {
-            player.sendMessage(block.getType().toString() + " !!!!");
+            //player.sendMessage(block.getType().toString() + " !!!!");
             switch (block.getType().toString()) {
                 case "WHEAT":
                 case "CARROTS":

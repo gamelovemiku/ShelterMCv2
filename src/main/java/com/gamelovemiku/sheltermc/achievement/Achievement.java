@@ -51,6 +51,7 @@ public class Achievement implements Listener {
     public void checkAndUnlocked(Player player) {
         if(!player.hasPermission(getPermission())) {
             new ShelterMCHelper().runOnConsole("lp user " + player.getName() + " permission set " + getPermission() + " true world=" + world);
+            new ShelterMCHelper().runOnConsole("lp user " + player.getName() + " permission set " + getPermission() + " true world=world_limbo");
             sendUnlockedMessage(player);
         }
 

@@ -99,7 +99,7 @@ public class Mining implements Listener {
 	public void sendBombMsg() {
 		player.sendTitle("",ChatColor.RED + "มีระเบิดกำลังทำงาน!", 15, 30, 15);
 		player.sendMessage("");
-		player.sendMessage("&cมีระเบิดกำลังทำงาน..");
+		player.sendMessage(helper.formatInGameColor("&cมีระเบิดกำลังทำงาน.."));
 		player.sendMessage("");
 	}
 

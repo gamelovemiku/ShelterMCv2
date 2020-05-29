@@ -24,3 +24,6 @@ commands:
   downloader:
     description: Your description
     usage: /<command>
+  life:
+    description: Your description
+    usage: /<command>

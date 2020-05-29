@@ -3,6 +3,7 @@ package com.gamelovemiku.sheltermc;
 import com.gamelovemiku.adapter.Vault;
 import com.gamelovemiku.sheltermc.achievement.*;
 import com.gamelovemiku.sheltermc.command.CommandAddon;
+import com.gamelovemiku.sheltermc.command.LifeCheckCMD;
 import com.gamelovemiku.sheltermc.command.ResourcePackCMD;
 import com.gamelovemiku.sheltermc.gameplay.FoodPower;
 import com.gamelovemiku.sheltermc.global.Mining;
@@ -56,9 +57,12 @@ public class ShelterMC extends JavaPlugin {
         Bukkit.getServer().getPluginManager().registerEvents(new LostInLimboAchievement(this), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents(new WeAreCommunityAchievement(this), (Plugin)this);
         Bukkit.getServer().getPluginManager().registerEvents(new WhereWeBelongAchievement(this), (Plugin)this);
-        Bukkit.getServer().getPluginManager().registerEvents(new DeadByPoisonAchievement(this), (Plugin)this);
 
-        //Bukkit.getServer().getPluginManager().registerEvents(new NightmareAchievement(this), (Plugin)this);
+        Bukkit.getServer().getPluginManager().registerEvents(new FirstbloodAchievement(this), (Plugin)this);
+        Bukkit.getServer().getPluginManager().registerEvents(new FishingAchievement(this), (Plugin)this);
+        Bukkit.getServer().getPluginManager().registerEvents(new LevelForFutureAchievement(this), (Plugin)this);
+        Bukkit.getServer().getPluginManager().registerEvents(new PureDiamondAchievement(this), (Plugin)this);
+
         //Bukkit.getServer().getPluginManager().registerEvents(new TrueStoriesAchievement(this), (Plugin)this);
 
         //WorldPatch
@@ -70,12 +74,15 @@ public class ShelterMC extends JavaPlugin {
         //Hook placeholder to PlaceholderAPI
         //new StockPlaceholderRegistration().register();
 
+        //Bukkit.getServer().getPluginManager().registerEvents(new NoTab(), (Plugin)this);
+
         this.getCommand("testpl").setExecutor(new CommandAddon());
         this.getCommand("ascotcity").setExecutor(new AscotCityWorldPatch(this));
         this.getCommand("shelterchest").setExecutor(new RandomItemChest(this));
         this.getCommand("limbo").setExecutor(new LimboWorldPatch(this));
         this.getCommand("downloader").setExecutor(new ResourcePackCMD());
         this.getCommand("stock").setExecutor(new StockCommand());
+        this.getCommand("life").setExecutor(new LifeCheckCMD());
     }
 
     @Override

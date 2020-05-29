@@ -88,7 +88,7 @@ public class RandomItemChest implements CommandExecutor, Listener {
                         Bukkit.getScheduler().scheduleSyncDelayedTask(this.plugin, () -> {
                             block.getWorld().spawnParticle(Particle.LAVA, block.getLocation().add(0, 1, 0), 30, 0.65, 0.5, 0.65, 0.5);
                             removeOpened(block);
-                        }, new ShelterMCHelper().secondToTick(10)); //6h
+                        }, new ShelterMCHelper().secondToTick(28800)); //6h
                     } else {
                         player.sendMessage(new ShelterMCHelper().formatInGameColor("&7# &8[&6Chest&8] &7ดูเหมือนว่าจะมีคนเอาของจากล่องนี้ไปแล้ว ลองมาดูใหม่ทีหลังนะ"));
                     }

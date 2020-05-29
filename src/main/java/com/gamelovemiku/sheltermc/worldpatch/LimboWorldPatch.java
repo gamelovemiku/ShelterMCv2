@@ -39,7 +39,6 @@ public class LimboWorldPatch implements Listener, CommandExecutor {
                     player.teleport(new Location(Bukkit.getWorld("world"), -65.50, 65, -103.50, 0, 0));
                     player.sendMessage(helper.formatInGameColor("&r"));
                     player.sendMessage(helper.formatInGameColor("&4# &8[&cLimbo&8] &7คุณได้รับการปลดปล่อยจาก &6Limbo &7แล้ว!"));
-                    player.sendMessage(helper.formatInGameColor("&r"));
                     player.sendTitle("", helper.formatInGameColor("&fคุณได้รับการปลดปล่อยจาก &6&lLimbo"), 15, 50, 15);
                     return true;
                 }

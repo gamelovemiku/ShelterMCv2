@@ -42,7 +42,10 @@ public class NoLimboPerk implements Listener {
                                 return true;
                             } else {
                                 //event.getPlayer().sendMessage(helper.formatInGameColor("DEBUG (random:" + num + " < " + change[i] + "): #" + i));
-                                player.sendMessage(helper.formatInGameColor("&d# &e[&dPerk&e] &7ด้วยความสามารถ &eโกงความตาย " + (100-change[i]) + "% &7ทำให้คุณไม่ต้องไป &6&lLimbo &7ในครั้งนี้"));
+                                player.sendMessage("");
+                                player.sendMessage(helper.formatInGameColor("&a&l✔ Perk Activated &eโกงความตาย"));
+                                player.sendMessage(helper.formatInGameColor("&fด้วยความสามารถ &eโกงความตาย " + (100-change[i]) + "% &fทำให้คุณไม่ต้องไป &6&lLimbo &fในครั้งนี้"));
+                                player.sendMessage("");
                                 player.playSound(player.getLocation(), Sound.ENTITY_CHICKEN_EGG, 1,1);
                                 event.setRespawnLocation(new Location(Bukkit.getWorld("world"), -65.50, 65, -103.50, 0, 3));
                                 return true;
@@ -55,6 +58,7 @@ public class NoLimboPerk implements Listener {
             } else {
                 event.getPlayer().sendMessage(helper.formatInGameColor("&c&m----------------------------------------------------"));
                 event.getPlayer().sendMessage(helper.formatInGameColor("&cคุณจำต้องทำอะไรบางอย่างเพื่อออกจาก &6&lLIMBO &cลองติดต่อคนแถวนี้ดูนะ"));
+                event.getPlayer().sendMessage(helper.formatInGameColor("&cหรือถ้ามี Life พอละก็ ไปเกิดใหม่ที่บ้านหลังใหญ่กลางเกาะ Limbo ได้เลย"));
                 event.getPlayer().sendMessage(helper.formatInGameColor("&c&m----------------------------------------------------"));
                 this.spawnInLimbo(event);
             }
@@ -63,7 +67,7 @@ public class NoLimboPerk implements Listener {
     }
 
     public void spawnInLimbo(PlayerRespawnEvent event) {
-        event.setRespawnLocation(new Location(Bukkit.getWorld("world_limbo"), 93.5, 37, 180, -180, 3));
+        event.setRespawnLocation(new Location(Bukkit.getWorld("world_limbo"), 59.5, 42, 156.5, 90, 1.5f));
         event.getPlayer().sendMessage(helper.formatInGameColor("&c&lINTO THE DEATH &7You are dead! now you are in Limbo"));
     }
 }
